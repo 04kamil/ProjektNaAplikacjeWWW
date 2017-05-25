@@ -8,18 +8,21 @@ using System.Web;
 
 namespace ProjektNaAplikacjeWWW.DAL
 {
-    public class databaseContext : DbContext
+    public class DatabaseContext : DbContext
     {
-        public databaseContext() : base("name=BookShopContext")
+        public DatabaseContext() : base("name=BookShopContext")
         {
             
         }
 
         public DbSet<User> Users { get; set; }
+        public DbSet<Author> Authors { get; set; }
+        public DbSet<Book> Books { get; set; }
+        public DbSet<Sale> Sales { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            Database.SetInitializer<databaseContext>(new DropCreateDatabaseIfModelChanges<databaseContext>());
+            Database.SetInitializer<DatabaseContext>(new DropCreateDatabaseIfModelChanges<DatabaseContext>());
             base.OnModelCreating(modelBuilder);
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
         }
