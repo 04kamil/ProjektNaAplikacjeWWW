@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 
@@ -13,5 +14,12 @@ namespace ProjektNaAplikacjeWWW.Controllers
         {
             return View();
         }
+
+        public async Task<ActionResult> Registration()
+        {
+            return View();
+        }
+
+        
     }
 }

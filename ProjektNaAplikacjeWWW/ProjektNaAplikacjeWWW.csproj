@@ -177,9 +177,18 @@
     <Compile Include="Migrations\201705252140005_3rd.Designer.cs">
       <DependentUpon>201705252140005_3rd.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201705260859092_AddedRegistration.cs" />
+    <Compile Include="Migrations\201705260859092_AddedRegistration.Designer.cs">
+      <DependentUpon>201705260859092_AddedRegistration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705260900592_4th.cs" />
+    <Compile Include="Migrations\201705260900592_4th.Designer.cs">
+      <DependentUpon>201705260900592_4th.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Author.cs" />
     <Compile Include="Models\Book.cs" />
+    <Compile Include="Models\Registration.cs" />
     <Compile Include="Models\Sale.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -193,6 +202,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Localization.pl-PL.resx</DependentUpon>
     </Compile>
+    <Compile Include="ViewModel\ControlPanelViewModel.cs" />
+    <Compile Include="ViewModel\CreateBookViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -245,12 +256,18 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Admin\ControlPanel.cshtml" />
+    <Content Include="Views\Admin\_CreateBook.cshtml" />
+    <Content Include="Views\Admin\_CreateAuthor.cshtml" />
+    <Content Include="Views\Admin\_BookList.cshtml" />
+    <Content Include="Views\Admin\_AuthorList.cshtml" />
+    <Content Include="Views\Admin\_UserList.cshtml" />
+    <Content Include="Views\User\Registration.cshtml" />
+    <Content Include="Views\Admin\_CreateBook2.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="ViewModel\" />
-    <Folder Include="Views\Admin\" />
-    <Folder Include="Views\User\" />
+    <Folder Include="Views\Default\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -267,6 +284,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201705252140005_3rd.resx">
       <DependentUpon>201705252140005_3rd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705260859092_AddedRegistration.resx">
+      <DependentUpon>201705260859092_AddedRegistration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705260900592_4th.resx">
+      <DependentUpon>201705260900592_4th.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\Localization.pl-PL.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>

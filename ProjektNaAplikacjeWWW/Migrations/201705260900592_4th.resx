@@ -117,46 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Email" xml:space="preserve">
-    <value>Email Adress</value>
+  <data name="Target" xml:space="preserve">
+    <value>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</value>
   </data>
-  <data name="FirstName" xml:space="preserve">
-    <value>First Name</value>
-  </data>
-  <data name="LastName" xml:space="preserve">
-    <value>Last Name</value>
-  </data>
-  <data name="Login" xml:space="preserve">
-    <value>Login</value>
-  </data>
-  <data name="Password" xml:space="preserve">
-    <value>Password</value>
-  </data>
-  <data name="PhoneNumber" xml:space="preserve">
-    <value>Phone Model</value>
-  </data>
-  <data name="ErrorFirstName" xml:space="preserve">
-    <value>Enter the first name correctly</value>
-  </data>
-  <data name="ErrorLastName" xml:space="preserve">
-    <value>Enter the last name correctly</value>
-  </data>
-  <data name="ErrorLogin" xml:space="preserve">
-    <value>Enter the login correctly</value>
-  </data>
-  <data name="ErrorPassword" xml:space="preserve">
-    <value>Enter the password correctly</value>
-  </data>
-  <data name="ErrorEmail" xml:space="preserve">
-    <value>Enter the email correctly</value>
-  </data>
-  <data name="ErrorPhoneNumber" xml:space="preserve">
-    <value>Enter the phone numbercorrectly</value>
-  </data>
-  <data name="ComparePassword" xml:space="preserve">
-    <value>Entere a password again</value>
-  </data>
-  <data name="ErrorComparePassword" xml:space="preserve">
-    <value>Password is diffrent</value>
+  <data name="DefaultSchema" xml:space="preserve">
+    <value>dbo</value>
   </data>
 </root>

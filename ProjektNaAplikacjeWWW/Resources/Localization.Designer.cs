@@ -61,11 +61,83 @@ namespace ProjektNaAplikacjeWWW.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Entere a password again.
+        /// </summary>
+        public static string ComparePassword {
+            get {
+                return ResourceManager.GetString("ComparePassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Email Adress.
         /// </summary>
         public static string Email {
             get {
                 return ResourceManager.GetString("Email", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Password is diffrent.
+        /// </summary>
+        public static string ErrorComparePassword {
+            get {
+                return ResourceManager.GetString("ErrorComparePassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter the email correctly.
+        /// </summary>
+        public static string ErrorEmail {
+            get {
+                return ResourceManager.GetString("ErrorEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter the first name correctly.
+        /// </summary>
+        public static string ErrorFirstName {
+            get {
+                return ResourceManager.GetString("ErrorFirstName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter the last name correctly.
+        /// </summary>
+        public static string ErrorLastName {
+            get {
+                return ResourceManager.GetString("ErrorLastName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter the login correctly.
+        /// </summary>
+        public static string ErrorLogin {
+            get {
+                return ResourceManager.GetString("ErrorLogin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter the password correctly.
+        /// </summary>
+        public static string ErrorPassword {
+            get {
+                return ResourceManager.GetString("ErrorPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter the phone numbercorrectly.
+        /// </summary>
+        public static string ErrorPhoneNumber {
+            get {
+                return ResourceManager.GetString("ErrorPhoneNumber", resourceCulture);
             }
         }
         

@@ -135,4 +135,28 @@
   <data name="PhoneNumber" xml:space="preserve">
     <value>Numer Tel.</value>
   </data>
+  <data name="ErrorFirstName" xml:space="preserve">
+    <value>Wprowadź poprawnie imię</value>
+  </data>
+  <data name="ErrorLastName" xml:space="preserve">
+    <value>Wprowadź poprawnie nazwisko</value>
+  </data>
+  <data name="ErrorLogin" xml:space="preserve">
+    <value>Wprowadź poprawnie nazwę użytkownika</value>
+  </data>
+  <data name="ErrorPassword" xml:space="preserve">
+    <value>Wprowadź poprawnie hasło</value>
+  </data>
+  <data name="ErrorEmail" xml:space="preserve">
+    <value>Wprowadź poprawnie Email</value>
+  </data>
+  <data name="ErrorPhoneNumber" xml:space="preserve">
+    <value>Wprowadź poprawnie numer tel.</value>
+  </data>
+  <data name="ComparePassword" xml:space="preserve">
+    <value>Wpisz jeszcze raz hasło </value>
+  </data>
+  <data name="ErrorComparePassword" xml:space="preserve">
+    <value>Hasło jest inne</value>
+  </data>
 </root>
