@@ -67,6 +67,12 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
@@ -150,7 +156,10 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AuthorsController.cs" />
+    <Compile Include="Controllers\BooksController.cs" />
+    <Compile Include="Controllers\DatabaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="DAL\AuthorRepository.cs" />
@@ -257,13 +266,14 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Admin\ControlPanel.cshtml" />
-    <Content Include="Views\Admin\_CreateBook.cshtml" />
-    <Content Include="Views\Admin\_CreateAuthor.cshtml" />
-    <Content Include="Views\Admin\_BookList.cshtml" />
-    <Content Include="Views\Admin\_AuthorList.cshtml" />
-    <Content Include="Views\Admin\_UserList.cshtml" />
     <Content Include="Views\User\Registration.cshtml" />
-    <Content Include="Views\Admin\_CreateBook2.cshtml" />
+    <Content Include="Views\Admin\_CreateBook.cshtml" />
+    <Content Include="Views\Admin\_UpdateAuthor.cshtml" />
+    <Content Include="Views\Database\Authors.cshtml" />
+    <Content Include="Views\Database\AuthorEdit.cshtml" />
+    <Content Include="Views\Database\Books.cshtml" />
+    <Content Include="Views\Database\AuthorCreate.cshtml" />
+    <Content Include="Views\Database\BookCreate.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

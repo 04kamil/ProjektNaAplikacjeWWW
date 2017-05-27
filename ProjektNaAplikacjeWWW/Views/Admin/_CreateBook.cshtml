@@ -1,4 +1,4 @@
-﻿@model ProjektNaAplikacjeWWW.ViewModel.CreateBookViewModel
+﻿@model ProjektNaAplikacjeWWW.Models.Book
 
 @using (Html.BeginForm("AddBook","Admin")) 
 {
@@ -9,63 +9,62 @@
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
-            @Html.LabelFor(model => model.book.Title, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.book.Title, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.book.Title, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.book.BookAuthor, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.BookAuthor, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                
-              @*@Html.DropDownList("tekst", ViewBag.list2 as SelectList, new { htmlAttributes = new { @class = "form-control" } })*@
-              @Html.DropDownListFor(model => model.book.BookAuthor, ViewBag.list2 as SelectList, new { htmlAttributes = new { @class = "form-control" } })
-               
-              @*@Html.EnumDropDownListFor(model => model.aut.Name,)*@
-            </div>
-            
-        </div>
 
+                @Html.DropDownList("_DropDownList", ViewBag.list2 as SelectList, new { htmlAttributes = new { @class = "form-control" } })
+                @*@Html.DropDownListFor(model => model.BookAuthor, ViewBag.list2 as SelectList, new { htmlAttributes = new { @class = "dropdown-toggle" } })*@
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.book.Lang, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.book.Lang, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.book.Lang, "", new { @class = "text-danger" })
+                @*@Html.EnumDropDownListFor(model => model.aut.Name,)*@
             </div>
+
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.book.Pages, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Lang, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.book.Pages, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.book.Pages, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.Lang, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Lang, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.book.ISBN, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Pages, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.book.ISBN, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.book.ISBN, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.Pages, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Pages, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.book.Descryption, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.ISBN, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.book.Descryption, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.book.Descryption, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.ISBN, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ISBN, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.book.ImgURL, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Descryption, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.book.ImgURL, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.book.ImgURL, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.Descryption, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Descryption, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ImgURL, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ImgURL, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ImgURL, "", new { @class = "text-danger" })
             </div>
         </div>
 

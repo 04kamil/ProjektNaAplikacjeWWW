@@ -1,7 +1,13 @@
 ﻿@model IEnumerable<ProjektNaAplikacjeWWW.Models.Author>
 
+@{
+    ViewBag.Title = "Authors";
+}
+
+<h2>Authors</h2>
+
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Create New", "AuthorCreate")
 </p>
 <table class="table">
     <tr>
@@ -35,9 +41,9 @@
             @Html.DisplayFor(modelItem => item.Descryption)
         </td>
         <td>
-            @*@Html.ActionLink("Edit", "Edit", new { id=item.AuthorID }) |*@
+            @Html.ActionLink("Edit", "AuthorEdit", new { id=item.AuthorID }) |
             @Html.ActionLink("Details", "Details", new { id=item.AuthorID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.AuthorID })
+            @Html.ActionLink("Delete", "AuthorDelete", new { id=item.AuthorID })
         </td>
     </tr>
 }
