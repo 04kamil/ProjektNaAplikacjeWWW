@@ -20,6 +20,7 @@ namespace ProjektNaAplikacjeWWW.DAL
         public DbSet<Book> Books { get; set; }
         public DbSet<Sale> Sales { get; set; }
         public DbSet<Registration> Registrations { get; set; }
+        public DbSet<Log> Logs { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

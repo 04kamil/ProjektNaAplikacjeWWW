@@ -21,6 +21,8 @@ namespace ProjektNaAplikacjeWWW.Controllers
 
         public  ActionResult Registration()
         {
+            
+            //SendMail("04kamil@gmail.com", "Witaj tu twoja apka teraz gin");
             return View();
         }
 
@@ -28,10 +30,42 @@ namespace ProjektNaAplikacjeWWW.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Registration(User u)
         {
-            u.AccountType = 0;
-            u.Active = false;
-            await UserRepository.Create(u);
-            return Redirect("Create");
+            if (ModelState.IsValid)
+            {
+                u.AccountType = 0;
+                u.Active = false;
+                await UserRepository.Create(u);
+
+                //mechanizm uwierzytelniania
+                Guid g = Guid.NewGuid();
+                await RegistrationRepository.Create(new Registration()
+                {
+                    ConfirmRegistrationCode = g.ToString(),
+                    EmailSend = DateTime.Now,
+                    EmailExpired = DateTime.Now.AddDays(2),
+                    Uzk = u
+                });
+                SendMail(u.Email.ToString(),g.ToString());
+            }
+            return Redirect("Registration");
+        }
+
+
+        public ActionResult Confirm(string s)
+        {
+            string text = HttpContext.Request.Url.PathAndQuery;
+            var lst  = text.Split('/');
+            Registration r = RegistrationRepository.Read(new Guid(lst.Last()));
+            if(r==null)
+            {
+                ViewBag.Result = "Cos poszlo nie tak";
+            }
+            else
+            {
+                ViewBag.Result = "rejestracja udana";
+
+            }
+            return View();
         }
 
 
@@ -43,14 +77,18 @@ namespace ProjektNaAplikacjeWWW.Controllers
             var fromAdress = new MailAddress("projectappweb@gmail.com", "Ebook Shop App");
             var toAdress = new MailAddress(userEmail);
             //tu wpisac poprawne haslo
-            string pass = "";
+            string pass = "Alfa1234";
 
 
-
+            //"localhost:51740/User/Confirm/"
 
             MailMessage mail = new MailMessage("projectappweb@gmail.com", userEmail);
             mail.Subject = "witaj";
-            mail.Body = content;
+            mail.Body = String.Format(
+                "<h3>Welcome to ProjectWebApp</h3>\n"
+                +"Please click here to active account\n"
+                + @"<a href =""localhost:51740/User/Confirm/""{0}>Click</a>",content
+                );
 
 
 

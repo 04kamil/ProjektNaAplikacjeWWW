@@ -21,6 +21,8 @@ namespace ProjektNaAplikacjeWWW.DAL
         }
 
 
+
+
         //Read(all)
         public static List<User> ReadAll()
         {
@@ -63,6 +65,21 @@ namespace ProjektNaAplikacjeWWW.DAL
             {
                 db.Users.Remove((from p in db.Users where p.UserID == id select p).SingleOrDefault());
                 await db.SaveChangesAsync();
+            }
+        }
+
+        //ActiveAcount
+
+        public static async Task ActiveAccount(Guid id)
+        {
+            using (DatabaseContext db = new DatabaseContext())
+            {
+                User u = (from p in db.Users where p.UserID == id select p).SingleOrDefault();
+                if(u!=null)
+                {
+                    u.Active = true;
+                    await db.SaveChangesAsync();
+                }
             }
         }
 
