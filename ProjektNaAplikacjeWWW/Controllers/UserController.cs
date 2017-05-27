@@ -55,7 +55,8 @@ namespace ProjektNaAplikacjeWWW.Controllers
         {
             string text = HttpContext.Request.Url.PathAndQuery;
             var lst  = text.Split('/');
-            Registration r = RegistrationRepository.Read(new Guid(lst.Last()));
+            Registration r = RegistrationRepository.FindByConfirmationCode(new Guid(lst.Last()));
+
             if(r==null)
             {
                 ViewBag.Result = "Cos poszlo nie tak";
@@ -63,6 +64,8 @@ namespace ProjektNaAplikacjeWWW.Controllers
             else
             {
                 ViewBag.Result = "rejestracja udana";
+                //Registration reg = RegistrationRepository.FindByConfirmationCode(new Guid(lst.Last()));
+                UserRepository.ActiveAccount(r.Uzk.UserID);
 
             }
             return View();

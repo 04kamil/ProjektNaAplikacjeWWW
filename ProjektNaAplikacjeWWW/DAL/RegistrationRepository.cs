@@ -27,5 +27,15 @@ namespace ProjektNaAplikacjeWWW.DAL
                 return r;
             }
         }
+
+        public static Registration FindByConfirmationCode(Guid id)
+        {
+            using (DatabaseContext db = new DatabaseContext())
+            {
+                Registration r = (from p in db.Registrations where p.ConfirmRegistrationCode == id.ToString() select p).SingleOrDefault();
+                return r;
+            }
+        }
+
     }
 }

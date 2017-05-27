@@ -70,7 +70,7 @@ namespace ProjektNaAplikacjeWWW.DAL
 
         //ActiveAcount
 
-        public static async Task ActiveAccount(Guid id)
+        public static void ActiveAccount(Guid id)
         {
             using (DatabaseContext db = new DatabaseContext())
             {
@@ -78,7 +78,7 @@ namespace ProjektNaAplikacjeWWW.DAL
                 if(u!=null)
                 {
                     u.Active = true;
-                    await db.SaveChangesAsync();
+                    db.SaveChangesAsync();
                 }
             }
         }
