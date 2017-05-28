@@ -11,6 +11,12 @@ namespace ProjektNaAplikacjeWWW.Controllers
         // GET: Error
         public ActionResult ErrorMessage()
         {
+            
+            return View();
+        }
+
+        public ActionResult WrongLoginOrPassword()
+        {
             return View();
         }
     }

@@ -20,8 +20,7 @@ namespace ProjektNaAplikacjeWWW.Models
         [Display(Name = "LastName", ResourceType = typeof(Resources.Localization))]
         [Required(ErrorMessageResourceName = "ErrorLastName", ErrorMessageResourceType = typeof(Resources.Localization))]
         public string LastName { get; set; }
-
-        
+     
         [Display(Name ="Login",ResourceType =typeof(Resources.Localization))]
         [Required(ErrorMessageResourceName = "ErrorLogin", ErrorMessageResourceType = typeof(Resources.Localization))]
         public string Login { get; set; }
@@ -40,9 +39,6 @@ namespace ProjektNaAplikacjeWWW.Models
         //[DataType(DataType.Password)]
         //public string ComparePaswword { get; set; }
 
-
-
-        
         public bool Active { get; set; }
 
         [Required]

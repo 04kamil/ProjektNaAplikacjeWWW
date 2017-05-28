@@ -34,8 +34,17 @@ namespace ProjektNaAplikacjeWWW.Controllers
         [HttpPost]
         public ActionResult Login(User u )
         {
+            User user = UserRepository.FindByLoginAndPassword(u.Login, u.Password);
+            if(user == null)
+            {
+                return RedirectToAction("WrongLoginOrPassword","Error", new { area = "" });
+            }
+            else
+            {
+                Session["Logged"] = user;
+                return Redirect("Index");
+            }
             
-            return Redirect("Index");
         }
     }
 }

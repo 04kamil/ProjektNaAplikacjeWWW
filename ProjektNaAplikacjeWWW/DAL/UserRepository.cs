@@ -107,6 +107,15 @@ namespace ProjektNaAplikacjeWWW.DAL
         }
 
 
+        public static User FindByLoginAndPassword(string login_,string password_)
+        {
+            using (DatabaseContext db = new DatabaseContext())
+            {
+                User u = (from p in db.Users where p.Login == login_ && p.Password == password_ select p).FirstOrDefault();
+                return u;
+            }
+        }
+
 
     }
 }
