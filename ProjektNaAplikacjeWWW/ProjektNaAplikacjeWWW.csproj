@@ -287,7 +287,6 @@
     <Content Include="Views\Admin\_UpdateAuthor.cshtml" />
     <Content Include="Views\Database\Authors.cshtml" />
     <Content Include="Views\Database\AuthorEdit.cshtml" />
-    <Content Include="Views\Database\Books.cshtml" />
     <Content Include="Views\Database\AuthorCreate.cshtml" />
     <Content Include="Views\Database\BookCreate.cshtml" />
     <Content Include="Views\User\Confirm.cshtml" />
@@ -295,6 +294,7 @@
     <Content Include="Views\Error\ErrorMessage.cshtml" />
     <Content Include="Views\Shared\_Login.cshtml" />
     <Content Include="Views\Error\WrongLoginOrPassword.cshtml" />
+    <Content Include="Views\Database\Books.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

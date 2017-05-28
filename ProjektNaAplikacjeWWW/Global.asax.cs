@@ -17,13 +17,13 @@ namespace ProjektNaAplikacjeWWW
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
         }
-        protected void Application_Error(object sender, EventArgs e)
-        {
-            Exception exc = Server.GetLastError();
-            int i = Response.StatusCode;
-            Server.ClearError();
-            Response.Redirect("/Error/ErrorMessage");
+        //protected void Application_Error(object sender, EventArgs e)
+        //{
+        //    Exception exc = Server.GetLastError();
+        //    int i = Response.StatusCode;
+        //    Server.ClearError();
+        //    Response.Redirect("/Error/ErrorMessage");
 
-        }
+        //}
     }
 }

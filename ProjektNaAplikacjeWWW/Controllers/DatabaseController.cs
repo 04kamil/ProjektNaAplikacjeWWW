@@ -74,10 +74,11 @@ namespace ProjektNaAplikacjeWWW.Controllers
         
        //Books
 
-        [HttpGet]
+        
         public ActionResult Books()
         {
-            return View(BookRepositorycs.ReadAll());
+            var lst = BookRepositorycs.ReadAll();
+            return View(lst);
         }
 
         public ActionResult BookCreate()

@@ -32,9 +32,9 @@ namespace ProjektNaAplikacjeWWW.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult Login(User u )
+        public ActionResult Login(string Login_,string Password_ )
         {
-            User user = UserRepository.FindByLoginAndPassword(u.Login, u.Password);
+            User user = UserRepository.FindByLoginAndPassword(Login_, Password_);
             if(user == null)
             {
                 return RedirectToAction("WrongLoginOrPassword","Error", new { area = "" });

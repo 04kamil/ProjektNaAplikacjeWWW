@@ -1,9 +1,11 @@
-﻿@model ProjektNaAplikacjeWWW.Models.User
+﻿@*@model ProjektNaAplikacjeWWW.Models.User*@
 
 @using (Html.BeginForm("Login", "Home"))
 {
-    @Html.TextBoxFor(model => model.Login, new { @class = "form-control" });
-    @Html.PasswordFor(model => model.Password, new { @class = "form-control" });
+    @*@Html.TextBoxFor(model => model.Login, new { @class = "form-control" });
+    @Html.PasswordFor(model => model.Password, new { @class = "form-control" });*@
+    @Html.TextBox("Login_","", new { @class = "form-control" })
+    @Html.TextBox("Password_", "", new { @class = "form-control" })
     <input class="btn btn-default" type="submit" value="Log in" />
 }
 @Html.ActionLink("Rejestracja", "Registration","User","", new { @class = "form-control" })
