@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using System.Net;
+using System.Data.Entity;
 
 namespace ProjektNaAplikacjeWWW.Controllers
 {
@@ -55,8 +56,15 @@ namespace ProjektNaAplikacjeWWW.Controllers
         {
             string text = HttpContext.Request.Url.PathAndQuery;
             var lst  = text.Split('/');
-            Registration r = RegistrationRepository.FindByConfirmationCode(new Guid(lst.Last()));
-
+            //test
+            //using (DatabaseContext db = new DatabaseContext())
+            //{
+            //    string si = lst.Last();
+            //    var g = (from p in db.Registrations where p.ConfirmRegistrationCode.ToString() == si  select p.Uzk.UserID.ToString()).SingleOrDefault();
+            //}
+            //koniec
+                var r = RegistrationRepository.FindByConfirmationCode(new Guid(lst.Last()));
+            
             if(r==null)
             {
                 ViewBag.Result = "Cos poszlo nie tak";
@@ -64,8 +72,8 @@ namespace ProjektNaAplikacjeWWW.Controllers
             else
             {
                 ViewBag.Result = "rejestracja udana";
-                //Registration reg = RegistrationRepository.FindByConfirmationCode(new Guid(lst.Last()));
-                UserRepository.ActiveAccount(r.Uzk.UserID);
+                User u = UserRepository.Read(new Guid(RegistrationRepository.GetUserID(lst.Last())));
+                UserRepository.ActiveAccount(u);
 
             }
             return View();
@@ -90,8 +98,9 @@ namespace ProjektNaAplikacjeWWW.Controllers
             mail.Body = String.Format(
                 "<h3>Welcome to ProjectWebApp</h3>\n"
                 +"Please click here to active account\n"
-                + @"<a href =""localhost:51740/User/Confirm/""{0}>Click</a>",content
+                + @"<a href=""//localhost:51740/User/Confirm/{0}""/>Click</a>",content
                 );
+            mail.IsBodyHtml = true;
 
 
 

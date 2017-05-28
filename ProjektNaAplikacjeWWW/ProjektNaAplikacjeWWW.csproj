@@ -160,6 +160,7 @@
     <Compile Include="Controllers\AuthorsController.cs" />
     <Compile Include="Controllers\BooksController.cs" />
     <Compile Include="Controllers\DatabaseController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="DAL\AuthorRepository.cs" />
@@ -199,6 +200,14 @@
     <Compile Include="Migrations\201705271912351_AddedLogs.cs" />
     <Compile Include="Migrations\201705271912351_AddedLogs.Designer.cs">
       <DependentUpon>201705271912351_AddedLogs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705281045237_p.cs" />
+    <Compile Include="Migrations\201705281045237_p.Designer.cs">
+      <DependentUpon>201705281045237_p.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705281053424_p1.cs" />
+    <Compile Include="Migrations\201705281053424_p1.Designer.cs">
+      <DependentUpon>201705281053424_p1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Author.cs" />
@@ -258,6 +267,7 @@
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Views\Shared\404.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -282,9 +292,13 @@
     <Content Include="Views\Database\AuthorCreate.cshtml" />
     <Content Include="Views\Database\BookCreate.cshtml" />
     <Content Include="Views\User\Confirm.cshtml" />
+    <Content Include="Views\Shared\Error1.cshtml" />
+    <Content Include="Views\Error\ErrorMessage.cshtml" />
+    <Content Include="Views\Shared\_Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Assets\Images\" />
     <Folder Include="Views\Default\" />
   </ItemGroup>
   <ItemGroup>
@@ -312,13 +326,21 @@
     <EmbeddedResource Include="Migrations\201705271912351_AddedLogs.resx">
       <DependentUpon>201705271912351_AddedLogs.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705281045237_p.resx">
+      <DependentUpon>201705281045237_p.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705281053424_p1.resx">
+      <DependentUpon>201705281053424_p1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Resources\Localization.pl-PL.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Localization.pl-PL.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\Localization.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Localization.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

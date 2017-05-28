@@ -70,15 +70,38 @@ namespace ProjektNaAplikacjeWWW.DAL
 
         //ActiveAcount
 
-        public static void ActiveAccount(Guid id)
+        public static void ActiveAccount(User u)
         {
             using (DatabaseContext db = new DatabaseContext())
             {
-                User u = (from p in db.Users where p.UserID == id select p).SingleOrDefault();
+                User user = db.Users.Find(u.UserID);
                 if(u!=null)
                 {
-                    u.Active = true;
-                    db.SaveChangesAsync();
+                    user.Active = true;
+                    //testowanie co mu sie nie podoba
+                    try
+                    {
+                        db.SaveChanges();
+                    }
+                    catch (System.Data.Entity.Validation.DbEntityValidationException dbEx)
+                    {
+                        Exception raise = dbEx;
+                        foreach (var validationErrors in dbEx.EntityValidationErrors)
+                        {
+                            foreach (var validationError in validationErrors.ValidationErrors)
+                            {
+                                string message = string.Format("{0}:{1}",
+                                    validationErrors.Entry.Entity.ToString(),
+                                    validationError.ErrorMessage);
+                                // raise a new exception nesting
+                                // the current instance as InnerException
+                                raise = new InvalidOperationException(message, raise);
+                            }
+                        }
+                        throw raise;
+                    }
+
+                    
                 }
             }
         }

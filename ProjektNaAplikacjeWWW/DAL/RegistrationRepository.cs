@@ -37,5 +37,14 @@ namespace ProjektNaAplikacjeWWW.DAL
             }
         }
 
+        public static string GetUserID(string str)
+        {
+            using (DatabaseContext db = new DatabaseContext())
+            {
+                var g = (from p in db.Registrations where p.ConfirmRegistrationCode.ToString() == str select p.Uzk.UserID.ToString()).SingleOrDefault();
+                return g;
+            }
+        }
+
     }
 }

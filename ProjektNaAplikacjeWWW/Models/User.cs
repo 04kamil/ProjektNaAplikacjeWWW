@@ -32,17 +32,17 @@ namespace ProjektNaAplikacjeWWW.Models
         [DataType(DataType.Password)]
         public string Password { get; set; }
 
-        [NotMapped]
-        [Compare("Password")]
-        [StringLength(maximumLength: 255, MinimumLength = 6)]
-        [Display(Name = "ComparePassword", ResourceType = typeof(Resources.Localization))]
-        [Required(ErrorMessageResourceName = "ErrorComparePassword", ErrorMessageResourceType = typeof(Resources.Localization))]
-        [DataType(DataType.Password)]
-        public string ComparePaswword { get; set; }
+        //[NotMapped]
+        //[Compare("Password")]
+        //[StringLength(maximumLength: 255, MinimumLength = 6)]
+        //[Display(Name = "ComparePassword", ResourceType = typeof(Resources.Localization))]
+        //[Required(ErrorMessageResourceName = "ErrorComparePassword", ErrorMessageResourceType = typeof(Resources.Localization))]
+        //[DataType(DataType.Password)]
+        //public string ComparePaswword { get; set; }
 
 
 
-        [Required]
+        
         public bool Active { get; set; }
 
         [Required]

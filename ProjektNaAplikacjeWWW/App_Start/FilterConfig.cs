@@ -9,5 +9,6 @@ namespace ProjektNaAplikacjeWWW
         {
             filters.Add(new HandleErrorAttribute());
         }
+        
     }
 }

@@ -1,4 +1,5 @@
 ﻿using ProjektNaAplikacjeWWW.DAL;
+using ProjektNaAplikacjeWWW.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,6 +30,12 @@ namespace ProjektNaAplikacjeWWW.Controllers
             ViewBag.Message = "Your contact page.";
 
             return View();
+        }
+        [HttpPost]
+        public ActionResult Login(User u )
+        {
+            
+            return Redirect("Index");
         }
     }
 }
