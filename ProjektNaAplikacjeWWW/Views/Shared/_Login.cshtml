@@ -1,11 +1,28 @@
-﻿@*@model ProjektNaAplikacjeWWW.Models.User*@
+﻿@model ProjektNaAplikacjeWWW.Models.User
+@using ProjektNaAplikacjeWWW.Models
 
-@using (Html.BeginForm("Login", "Home"))
-{
-    @*@Html.TextBoxFor(model => model.Login, new { @class = "form-control" });
-    @Html.PasswordFor(model => model.Password, new { @class = "form-control" });*@
-    @Html.TextBox("Login_","", new { @class = "form-control" })
-    @Html.TextBox("Password_", "", new { @class = "form-control" })
-    <input class="btn btn-default" type="submit" value="Log in" />
+@{
+    User u = (User)Session["Logged"];
 }
-@Html.ActionLink("Rejestracja", "Registration","User","", new { @class = "form-control" })
+
+
+@if (u == null)
+{
+    using (Html.BeginForm("Login", "Home"))
+    {
+        @*@Html.TextBoxFor(model => model.Login, new { @class = "form-control" });
+            @Html.PasswordFor(model => model.Password, new { @class = "form-control" });*@
+        @Html.TextBox("Login_", "", new { @class = "form-control" })
+        @Html.TextBox("Password_", "", new { @class = "form-control" })
+        <input class="btn btn-default" type="submit" value="Log in" />
+    }
+    @Html.ActionLink("Rejestracja", "Registration", "User", "", new { @class = "form-control" })
+}else
+{
+    @Html.Label("Witaj " + u.Login.ToString(), new { @class = "form-control" })
+    <input type="button" value="Wyloguj" onclick="location.href='@Url.Action("Logout","Home")'" />
+    
+}
+
+
+

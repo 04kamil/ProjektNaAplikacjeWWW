@@ -208,6 +208,10 @@
     <Compile Include="Migrations\201705281053424_p1.Designer.cs">
       <DependentUpon>201705281053424_p1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201705290850228_test.cs" />
+    <Compile Include="Migrations\201705290850228_test.Designer.cs">
+      <DependentUpon>201705290850228_test.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Author.cs" />
     <Compile Include="Models\Book.cs" />
@@ -331,6 +335,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201705281053424_p1.resx">
       <DependentUpon>201705281053424_p1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705290850228_test.resx">
+      <DependentUpon>201705290850228_test.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\Localization.pl-PL.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>

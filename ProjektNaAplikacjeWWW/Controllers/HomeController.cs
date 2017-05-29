@@ -46,5 +46,10 @@ namespace ProjektNaAplikacjeWWW.Controllers
             }
             
         }
+        public ActionResult Logout()
+        {
+            Session["Logged"] = null;
+            return Redirect("Index");
+        }
     }
 }

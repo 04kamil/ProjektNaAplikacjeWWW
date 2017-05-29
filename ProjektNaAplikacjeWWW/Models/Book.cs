@@ -24,7 +24,7 @@ namespace ProjektNaAplikacjeWWW.Models
 
         public string Descryption { get; set; }
 
-        public string ImgURL { get; set; }
+        public string URL { get; set; }
 
         public virtual Author BookAuthor { get; set; }
 

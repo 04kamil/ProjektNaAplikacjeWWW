@@ -1,5 +1,5 @@
 ﻿@model IEnumerable<ProjektNaAplikacjeWWW.Models.Book>
-
+@using ProjektNaAplikacjeWWW.Models
 @{
     ViewBag.Title = "Books";
 }
@@ -27,7 +27,7 @@
             @Html.DisplayNameFor(model => model.Descryption)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.ImgURL)
+            @Html.DisplayNameFor(model => model.URL)
         </th>
         <th></th>
     </tr>
@@ -50,12 +50,40 @@
             @Html.DisplayFor(modelItem => item.Descryption)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.ImgURL)
+            @Html.DisplayFor(modelItem => item.URL)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.BookId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.BookId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.BookId })
+
+                @{ 
+                    User u = (User)Session["Logged"];
+                }
+                
+                
+                    @if ((u != null) && (u.AccountType == 1))
+                    {
+                        <p>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.BookId }) | @Html.ActionLink("Delete", "DeleteBook", new { id = item.BookId }) | @Html.ActionLink("Details", "Details", new { id = item.BookId })
+                        </p>
+                    }
+                    else
+                    {
+                        <p>
+                            @Html.ActionLink("Details", "Details", new { id = item.BookId })
+                        </p>
+                        
+                    }
+
+
+
+
+
+
+
+
+
+
+
+
         </td>
     </tr>
 }

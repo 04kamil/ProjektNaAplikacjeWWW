@@ -46,7 +46,7 @@ namespace ProjektNaAplikacjeWWW.DAL
                 Book OldBook = db.Books.Find(NewBook.BookId);
                 OldBook.BookAuthor = NewBook.BookAuthor;
                 OldBook.Descryption = NewBook.Descryption;
-                OldBook.ImgURL = NewBook.ImgURL;
+                OldBook.URL = NewBook.URL;
                 OldBook.ISBN = NewBook.ISBN;
                 OldBook.Lang = NewBook.Lang;
                 OldBook.Pages = NewBook.Pages;

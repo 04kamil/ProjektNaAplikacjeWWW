@@ -65,7 +65,7 @@ namespace ProjektNaAplikacjeWWW.Controllers
             //koniec
                 var r = RegistrationRepository.FindByConfirmationCode(new Guid(lst.Last()));
             
-            if(r==null)
+            if(r==null || r.EmailExpired<DateTime.Now)
             {
                 ViewBag.Result = "Cos poszlo nie tak";
             }

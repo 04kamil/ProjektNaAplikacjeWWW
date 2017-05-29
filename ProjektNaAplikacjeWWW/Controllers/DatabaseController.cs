@@ -125,5 +125,11 @@ namespace ProjektNaAplikacjeWWW.Controllers
             return View("Authors");
         }
 
+        public async Task<ActionResult> DeleteBook(Guid id)
+        {
+            await BookRepositorycs.Delete(id);
+            return View("books", BookRepositorycs.ReadAll());
+        }
+
     }
 }
