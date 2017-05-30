@@ -31,6 +31,7 @@ namespace ProjektNaAplikacjeWWW.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Registration(User u)
         {
+
             if (ModelState.IsValid)
             {
                 u.AccountType = 0;
@@ -47,8 +48,9 @@ namespace ProjektNaAplikacjeWWW.Controllers
                     Uzk = u
                 });
                 SendMail(u.Email.ToString(),g.ToString());
+                return RedirectToAction("Index", "Home");
             }
-            return Redirect("Registration");
+            return View(u);
         }
 
 
@@ -78,6 +80,31 @@ namespace ProjektNaAplikacjeWWW.Controllers
             }
             return View();
         }
+
+        //sprawdzane loginu w bazie
+        [HttpPost]
+        public JsonResult IsLoginAvailable(string log)
+        {
+            var user = UserRepository.IsLoginAvailable(log);
+            return Json(user == null);
+        }
+
+
+        //public ActionResult IsLoginAvailabe( string log)
+        //{
+        //    try
+        //    {
+        //        var tag = UserRepository.IsLoginAvailable(log);
+        //        return Json(false, JsonRequestBehavior.AllowGet);
+        //    }
+        //    catch (Exception)
+        //    {
+        //        return Json(true, JsonRequestBehavior.AllowGet);
+        //    }
+
+        //}
+
+
 
 
         //EmailControl

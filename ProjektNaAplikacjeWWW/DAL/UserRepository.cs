@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
+using System.Web.Helpers;
+using System.Web.Mvc;
 
 namespace ProjektNaAplikacjeWWW.DAL
 {
@@ -113,6 +115,28 @@ namespace ProjektNaAplikacjeWWW.DAL
             {
                 User u = (from p in db.Users where p.Login == login_ && p.Password == password_ select p).FirstOrDefault();
                 return u;
+            }
+        }
+
+        public static User IsLoginAvailable(string name_)
+        {
+            using (DatabaseContext db = new DatabaseContext())
+            {
+                var user = (from p in db.Users where p.Login == name_ select p).FirstOrDefault();
+
+                return user;
+
+            }
+        }
+
+        public static User IsmailAvailable(string mail_)
+        {
+            using (DatabaseContext db = new DatabaseContext())
+            {
+                var user = (from p in db.Users where p.Login == mail_ select p).FirstOrDefault();
+
+                return user;
+
             }
         }
 

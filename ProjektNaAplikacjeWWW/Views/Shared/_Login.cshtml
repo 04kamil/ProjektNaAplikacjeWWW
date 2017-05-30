@@ -17,12 +17,14 @@
         <input class="btn btn-default" type="submit" value="Log in" />
     }
     @Html.ActionLink("Rejestracja", "Registration", "User", "", new { @class = "form-control" })
-}else
+}
+
+@*else
 {
     @Html.Label("Witaj " + u.Login.ToString(), new { @class = "form-control" })
-    <input type="button" value="Wyloguj" onclick="location.href='@Url.Action("Logout","Home")'" />
-    
-}
+    <input type="button" value="Wyloguj" onclick="location.href='@Url.Action("Logout","Home")'" class="btn" />
+
+}*@
 
 
 

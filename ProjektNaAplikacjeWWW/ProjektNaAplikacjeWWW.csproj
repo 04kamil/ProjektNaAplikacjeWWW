@@ -162,6 +162,7 @@
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="CustomAttrib\Attrib.cs" />
     <Compile Include="DAL\AuthorRepository.cs" />
     <Compile Include="DAL\BookRepositorycs.cs" />
     <Compile Include="DAL\DatabaseContext.cs" />
@@ -211,6 +212,10 @@
     <Compile Include="Migrations\201705290850228_test.cs" />
     <Compile Include="Migrations\201705290850228_test.Designer.cs">
       <DependentUpon>201705290850228_test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705301909199_validatinTest.cs" />
+    <Compile Include="Migrations\201705301909199_validatinTest.Designer.cs">
+      <DependentUpon>201705301909199_validatinTest.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Author.cs" />
@@ -338,6 +343,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201705290850228_test.resx">
       <DependentUpon>201705290850228_test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705301909199_validatinTest.resx">
+      <DependentUpon>201705301909199_validatinTest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\Localization.pl-PL.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
